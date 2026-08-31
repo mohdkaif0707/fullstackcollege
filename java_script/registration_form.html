@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+
+    <style>
+        h1 {
+            text-align: center;
+        }
+
+        .error {
+            color: red;
+            font-size: 13px;
+        }
+
+        input,
+        select,
+        textarea {
+            margin: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form method="post" id="registrationForm">
+
+        <h1>Registration Form</h1>
+
+        <table>
+
+            <!-- First Name -->
+            <tr>
+                <td>
+                    <label>First Name:</label>
+                </td>
+                <td>
+                    <input type="text" id="firstName"
+                        placeholder="Enter your first name">
+                    <span id="firstNameError" class="error"></span>
+                </td>
+            </tr>
+
+            <!-- Last Name -->
+            <tr>
+                <td>
+                    <label>Last Name:</label>
+                </td>
+                <td>
+                    <input type="text" id="lastName"
+                        placeholder="Enter your last name">
+                    <span id="lastNameError" class="error"></span>
+                </td>
+            </tr>
+
+            <!-- Father's Name -->
+            <tr>
+                <td>
+                    <label>Father's Name:</label>
+                </td>
+                <td>
+                    <input type="text" id="fatherName"
+                        placeholder="Enter your father's name">
+                    <span id="fatherNameError" class="error"></span>
+                </td>
+            </tr>
+
+            <!-- Mother's Name -->
+            <tr>
+                <td>
+                    <label>Mother's Name:</label>
+                </td>
+                <td>
+                    <input type="text" id="motherName"
+                        placeholder="Enter your mother's name">
+                    <span id="motherNameError" class="error"></span>
+                </td>
+            </tr>
+
+            <!-- DOB -->
+            <tr>
+                <td>
+                    <label>Date of Birth:</label>
+                </td>
+                <td>
+                    <input type="date" id="dob">
+                    <span id="dobError" class="error"></span>
+                </td>
+            </tr>
+
+            <!-- Email -->
+            <tr>
+                <td>
+                    <label>Email:</label>
+                </td>
+                <td>
+                    <input type="email" id="email"
+                        placeholder="Enter your email">
+                    <span id="emailError" class="error"></span>
+                </td>
+            </tr>
+
+            <!-- Gender -->
+            <tr>
+                <td>
+                    <label>Gender:</label>
+                </td>
+                <td>
+                    <input type="radio" name="gender" value="Male">
+                    Male
+
+                    <input type="radio" name="gender" value="Female">
+                    Female
+
+                    <span id="genderError" class="error"></span>
+                </td>
+            </tr>
+
+            <!-- Course -->
+            <tr>
+                <td>
+                    <label>Choose Course:</label>
+                </td>
+
+                <td>
+                    <select id="course">
+                        <option value="">--select--</option>
+                        <option value="CSE">CSE</option>
+                        <option value="ME">ME</option>
+                        <option value="IT">IT</option>
+                        <option value="ECE">ECE</option>
+                    </select>
+
+                    <span id="courseError" class="error"></span>
+                </td>
+            </tr>
+
+            <!-- Hobbies -->
+            <tr>
+                <td>
+                    <label>Hobbies:</label>
+                </td>
+
+                <td>
+                    <input type="checkbox" name="hobby" value="Cricket">
+                    Cricket
+
+                    <input type="checkbox" name="hobby" value="Football">
+                    Football
+
+                    <input type="checkbox" name="hobby" value="Chess">
+                    Chess
+
+                    <input type="checkbox" name="hobby" value="Swimming">
+                    Swimming
+
+                    <span id="hobbyError" class="error"></span>
+                </td>
+            </tr>
+
+            <!-- Address -->
+            <tr>
+                <td>
+                    <label>Address:</label>
+                </td>
+
+                <td>
+                    <textarea id="address"
+                        placeholder="Enter your address"></textarea>
+
+                    <span id="addressError" class="error"></span>
+                </td>
+            </tr>
+
+            <!-- Buttons -->
+            <tr>
+                <td>
+                    <button type="submit">Submit</button>
+                </td>
+
+                <td>
+                    <button type="reset">Reset</button>
+                </td>
+            </tr>
+
+        </table>
+
+    </form>
+
+
+    <script>
+
+        document.getElementById("registrationForm").addEventListener("submit", function (event) {
+
+            event.preventDefault();
+
+            // Clear previous errors
+            document.querySelectorAll(".error").forEach(function (error) {
+                error.innerText = "";
+            });
+
+            let valid = true;
+
+
+            // First Name
+            let firstName = document.getElementById("firstName").value.trim();
+
+            if (firstName === "") {
+                document.getElementById("firstNameError").innerText =
+                    " First name is required";
+                valid = false;
+            }
+
+
+            // Last Name
+            let lastName = document.getElementById("lastName").value.trim();
+
+            if (lastName === "") {
+                document.getElementById("lastNameError").innerText =
+                    " Last name is required";
+                valid = false;
+            }
+
+
+            // Father's Name
+            let fatherName = document.getElementById("fatherName").value.trim();
+
+            if (fatherName === "") {
+                document.getElementById("fatherNameError").innerText =
+                    " Father's name is required";
+                valid = false;
+            }
+
+
+            // Mother's Name
+            let motherName = document.getElementById("motherName").value.trim();
+
+            if (motherName === "") {
+                document.getElementById("motherNameError").innerText =
+                    " Mother's name is required";
+                valid = false;
+            }
+
+
+            // Date of Birth
+            let dob = document.getElementById("dob").value;
+
+            if (dob === "") {
+                document.getElementById("dobError").innerText =
+                    " Date of birth is required";
+                valid = false;
+            }
+
+
+            // Email
+            let email = document.getElementById("email").value.trim();
+
+            let emailPattern =
+                /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (email === "") {
+
+                document.getElementById("emailError").innerText =
+                    " Email is required";
+
+                valid = false;
+
+            } else if (!emailPattern.test(email)) {
+
+                document.getElementById("emailError").innerText =
+                    " Enter a valid email";
+
+                valid = false;
+            }
+
+
+            // Gender
+            let gender = document.querySelector(
+                'input[name="gender"]:checked'
+            );
+
+            if (!gender) {
+
+                document.getElementById("genderError").innerText =
+                    " Select gender";
+
+                valid = false;
+            }
+
+
+            // Course
+            let course = document.getElementById("course").value;
+
+            if (course === "") {
+
+                document.getElementById("courseError").innerText =
+                    " Select a course";
+
+                valid = false;
+            }
+
+
+            // Hobbies
+            let hobbies = document.querySelectorAll(
+                'input[name="hobby"]:checked'
+            );
+
+            if (hobbies.length === 0) {
+
+                document.getElementById("hobbyError").innerText =
+                    " Select at least one hobby";
+
+                valid = false;
+            }
+
+
+            // Address
+            let address = document.getElementById("address").value.trim();
+
+            if (address === "") {
+
+                document.getElementById("addressError").innerText =
+                    " Address is required";
+
+                valid = false;
+
+            } else if (address.length < 10) {
+
+                document.getElementById("addressError").innerText =
+                    " Address must contain at least 10 characters";
+
+                valid = false;
+            }
+
+
+            // Final result
+            if (valid) {
+
+                alert("Registration Successful!");
+
+                // Form submit karna ho to:
+                // this.submit();
+
+            }
+
+        });
+
+
+        // Reset ke baad errors remove
+        document.getElementById("registrationForm").addEventListener("reset", function () {
+
+            setTimeout(function () {
+
+                document.querySelectorAll(".error").forEach(function (error) {
+                    error.innerText = "";
+                });
+
+            }, 0);
+
+        });
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    const num = [10,11,12,13,14,15,16,17,18,19];
+    const even =  num.filter((i)=>(i%2==0));
+
+    const sum = even.reduce((i,s)=>(i+s));
+
+    console.log("num",num);
+    console.log("even",even);
+    console.log("sum",sum);
+</script>
+</html>
