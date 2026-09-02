@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+```
+<title>Bus Booking System</title>
+
+<style>
+    .page {
+        background-color: whitesmoke;
+        padding: 20px;
+        border: 2px solid black;
+    }
+
+    .bus {
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .user_info,
+    .bus-info {
+        text-align: center;
+        background-color: orange;
+        font-family: Arial, Helvetica, sans-serif;
+        padding: 5px;
+    }
+
+    .userinfoinside {
+        margin: 20px;
+    }
+
+    .userinfoinside div {
+        margin: 10px;
+    }
+
+    img {
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+    .buy {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .buy button {
+        background-color: green;
+        color: white;
+        border: none;
+        padding: 12px 30px;
+        font-size: 16px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .buy button:hover {
+        background-color: darkgreen;
+    }
+</style>
+```
+
+</head>
+
+<body>
+
+```
+<div class="page">
+
+    <!-- Header -->
+    <div>
+        <img title="logo"
+             src="3760d9d641a10a16ed11a3bb9edc9852.jpg"
+             height="80"
+             width="80">
+
+        <h1 class="bus">BUS BOOKING SYSTEM</h1>
+    </div>
+
+
+    <!-- User Information -->
+    <div class="user_info">
+        <h2>USER INFORMATION</h2>
+    </div>
+
+    <div class="userinfoinside">
+
+        <div>
+            <label>USER NAME:</label>
+            <input type="text" placeholder="Enter your name">
+        </div>
+
+        <div>
+            <label>USER AGE:</label>
+            <input type="number" placeholder="Enter your age">
+        </div>
+
+        <div>
+            <label>USER ADHAAR NO.:</label>
+            <input type="number" placeholder="Enter your Aadhaar number">
+        </div>
+
+        <div>
+            <label for="city">SELECT YOUR CITY:</label>
+
+            <select id="city">
+                <option value="">Select City</option>
+                <option value="mumbai">MUMBAI</option>
+                <option value="delhi">DELHI</option>
+                <option value="bengaluru">BENGALURU</option>
+                <option value="kolkata">KOLKATA</option>
+            </select>
+        </div>
+
+        <div>
+            <label>JOURNEY DATE:</label>
+            <input type="date">
+        </div>
+
+    </div>
+
+
+    <!-- Bus Information -->
+    <div class="bus-info">
+        <h2>BUS INFORMATION</h2>
+    </div>
+
+    <div class="userinfoinside">
+
+        <div>
+            <label>
+                <input type="radio" name="busType" value="AC">
+                AC BUS ₹2000
+            </label>
+        </div>
+
+        <div>
+            <label>
+                <input type="radio" name="busType" value="NON-AC">
+                NON-AC BUS ₹1500
+            </label>
+        </div>
+
+        <br>
+
+        <label for="seat">SELECT YOUR SEAT:</label>
+
+        <select id="seat">
+            <option value="">Number of Seats</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+
+    </div>
+
+
+    <!-- Buy Button -->
+    <div class="buy">
+        <button onclick="window.location.href='booking.html'">
+            BUY NOW
+        </button>
+    </div>
+
+</div>
+```
+
+</body>
+</html>
